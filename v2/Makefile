@@ -7,7 +7,7 @@ GOGET=$(GOCMD) get
     
 all: build
 build:
-	$(GOBUILD) -v -ldflags="-extldflags=-static" -o "nuclei" cmd/nuclei/main.go
+	$(GOBUILD) -ldflags="-s -w" -o "nuclei" cmd/nuclei/main.go
 docs:
 	if ! which dstdocgen > /dev/null; then
 		echo -e "Command not found! Install? (y/n) \c"
